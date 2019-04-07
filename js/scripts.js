@@ -5,8 +5,9 @@ function AddressBook() {
 }
 
 AddressBook.prototype.addContact = function(contact) {
-  this.contacts.push(contact);
-}
+  contact.id = this.assignId(); // gives contact an Id
+  this.contacts.push(contact); // adds,contact to contacts array in AddressBook
+,
 
 AddressBook.prototype.assignId = function(contact) {
   this.currentId++;
@@ -15,8 +16,8 @@ AddressBook.prototype.assignId = function(contact) {
 
 // Business Logic for Contacts
 function Contact(firstName, lastName, phoneNumber) {
-  this.firstName = firstName;
-  this.lastName = lastName;
+  this.firstName = firstName,
+  this.lastName = lastName,
   this.phoneNumber = phoneNumber;
 }
 
