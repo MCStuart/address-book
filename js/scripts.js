@@ -9,25 +9,29 @@ AddressBook.prototype.addContact = function(contact) {
   this.contacts.push(contact); // adds,contact to contacts array in AddressBook
 }
 
-AddressBook.prototype.assignId = function(contact) {
+AddressBook.prototype.assignId = function() {
   this.currentId++;
   return this.currentId;
 }
 
 AddressBook.prototype.findContact = function(id) {
   for (var i = 0; i < this.contacts.length; i++) {
-    if (this.contacts[i].id === id) {
-      return this.contacts[i];
+    if (this.contacts[i]) {
+      if (this.contacts[i].id === id) {
+        return this.contacts[i];
+      }
     }
   };
   return false;
 }
 
-AddresssBook.prototype.deleteContact = function(id) {
+AddressBook.prototype.deleteContact = function(id) {
   for (var i = o; i < this.contacts.length; i++) {
-    if (this.contacts[i].id === id) {
-      delete this.contacts[i];
-      return true;
+    if (this.contacts[i]) {
+      if (this.contacts[i].id === id) {
+        delete this.contacts[i];
+        return true;
+      }
     }
   };
   return false;
